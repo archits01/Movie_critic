@@ -94,6 +94,38 @@ GET /api/movies/top-rated
 GET /api/movies/category/Action
 ```
 
+## Advanced Filtering
+
+The GET `/api/movies` endpoint supports advanced filtering with query parameters:
+
+### Query Parameters
+
+| Parameter | Description | Example |
+|-----------|-------------|---------|
+| `name` | Search by movie title (case-insensitive) | `?name=dark` |
+| `year` | Filter by release year | `?year=2008` |
+| `sort` | Sort alphabetically (`asc` or `desc`) | `?sort=asc` |
+| `limit` | Limit number of results | `?limit=3` |
+
+### Advanced Filtering Examples
+
+```bash
+# Search for movies with "dark" in title
+GET /api/movies?name=dark
+
+# Get movies from 2008
+GET /api/movies?year=2008
+
+# Get top 3 movies sorted alphabetically
+GET /api/movies?limit=3&sort=asc
+
+# Combined filters: movies with 'a' in name, from 2023, top 3, sorted A-Z
+GET /api/movies?name=a&year=2023&limit=3&sort=asc
+
+# Get all movies sorted Z-A
+GET /api/movies?sort=desc
+```
+
 ## Validation Rules
 
 - All fields (title, category, releaseYear, rating) are required
@@ -111,5 +143,6 @@ The API returns appropriate HTTP status codes:
 - `500` - Internal Server Error
 
 ## Team Members
-- Archit Sakri
-- Apeksha 
+
+- **Apeksha**
+- **Archit Sakri**
