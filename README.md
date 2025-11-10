@@ -109,3 +109,7 @@ The API returns appropriate HTTP status codes:
 - `400` - Bad Request (validation errors)
 - `404` - Not Found
 - `500` - Internal Server Error
+
+## Team Members
+- Archit Sakri
+- Apeksha 
